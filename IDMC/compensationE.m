@@ -18,8 +18,8 @@ for j = 1:G_size4
             iAn(k,k,i,j) = Vread*G_n(k,1)/output_n(1,1);
         end
         for k =1:nbl
-            iBp(k,k,i,j) = Vread*G_p(nbl,k)/output_p(1,k);
-            iBn(k,k,i,j) = Vread*G_n(nbl,k)/output_n(1,k);
+            iBp(k,k,i,j) = Vread*G_p(nwl,k)/output_p(1,k);
+            iBn(k,k,i,j) = Vread*G_n(nwl,k)/output_n(1,k);
         end
     end
 end
