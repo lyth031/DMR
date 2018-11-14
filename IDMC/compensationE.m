@@ -16,11 +16,11 @@ for j = 1:G_size4
             output_n=response(gwl,gbl,nwl,nbl,G_n,vin);
             iAp(k,k,i,j) = Vread*G_p(k,1)/output_p(1,1);
             iAn(k,k,i,j) = Vread*G_n(k,1)/output_n(1,1);
-            if k==nwl
-                iBp(1,:,i,j) = Vread*G_p(k,:)./output_p;
-                iBn(1,:,i,j) = Vread*G_n(k,:)./output_n;
-            end
-        end           
+        end
+        for k =1:nbl
+            iBp(k,k,i,j) = Vread*G_p(nbl,k)/output_p(1,k);
+            iBn(k,k,i,j) = Vread*G_n(nbl,k)/output_n(1,k);
+        end
     end
 end
 iAp(iAp>10)=10;
